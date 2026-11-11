@@ -1,4 +1,4 @@
-import{C as e,_ as t,a as n,b as r,c as i,g as a,h as o,i as s,m as c,n as l,o as u,p as d,r as f,s as p,t as m,v as h,x as g,y as _}from"./jsxRuntime-0iJ8yBYw.js";function v(e,t){if(e===t)return{identical:!0,notes:[`送信した本文と完全に一致`]};let n=[],r=t.includes(`\r
+import{C as e,_ as t,a as n,b as r,c as i,g as a,h as o,i as s,m as c,n as l,o as u,p as d,r as f,s as p,t as m,v as h,x as g,y as _}from"./jsxRuntime-Bh5xxLey.js";function v(e,t){if(e===t)return{identical:!0,notes:[`送信した本文と完全に一致`]};let n=[],r=t.includes(`\r
 `),i=e.includes(`\r
 `);r&&!i&&n.push(`改行が LF → CRLF に変換されている`),!r&&i&&n.push(`改行が CRLF → LF に変換されている`);let a=e=>e.replace(/\r\n/g,`
 `),o=a(e),s=a(t);if(o===s)return n.push(`改行コード以外は一致`),{identical:!1,notes:n};if(o.trimEnd()===s.trimEnd())return n.push(`末尾の空白・改行だけが異なる（送信 ${JSON.stringify(y(o))} / 受信 ${JSON.stringify(y(s))}）`),{identical:!1,notes:n};if(o.trim()===s.trim())return n.push(`先頭・末尾の空白・改行だけが異なる`),{identical:!1,notes:n};let c=e=>(e.match(/<!--[\s\S]*?-->/g)??[]).length,l=c(o),u=c(s);l!==u&&n.push(`HTML コメントの数が変わった（送信 ${l} / 受信 ${u}）`);let d=0;for(;d<o.length&&d<s.length&&o[d]===s[d];)d++;let f=o.slice(0,d).split(`
